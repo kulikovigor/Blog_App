@@ -32,3 +32,12 @@
     line-height: 50px;
   }
 }
+
+@media (max-width: 767px) {
+  .new-post-btn {
+    width: 250px;
+    font-size: 16px;
+    line-height: 44px;
+  }
+}
+
