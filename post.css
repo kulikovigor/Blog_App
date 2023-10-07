@@ -107,3 +107,26 @@
     line-height: 25px;
   }
 }
+
+@media (max-width: 767px) {
+  .post-title-input {
+    width: 240px;
+    height: 26px;
+  }
+
+  .post-text-input {
+    width: 242px;
+    height: 120px;
+  }
+
+  .post__title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .post__text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
