@@ -1,5 +1,5 @@
-@import "/post.css";
-@import "/button.css";
+@import "post.css";
+@import "button.css";
 
 body {
   font-family: "Inter", sans-serif;
