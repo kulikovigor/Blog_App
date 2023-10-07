@@ -34,7 +34,7 @@ function validation() {
    const textLen = postTextInputNode.value.length;
 
    if (titleLen > TITLE_VALIDATION_LIMIT) {
-    validationMessage.innerText = `Длина заголовка не должна превышать ${TITLE_VALIDATION_LIMIT} символов`;
+    validationMessage.innerText = `Заголовок больше ${TITLE_VALIDATION_LIMIT} символов`;
     validationMessage.classList.remove('validationMessage_hidden')
     btn.setAttribute('disabled', true);
     btn.style.opacity = "0.5";
@@ -42,7 +42,7 @@ function validation() {
    }
 
    if (textLen > TEXT_VALIDATION_LIMIT) {
-   validationMessage.innerText = `Длина заголовка не должна превышать ${TEXT_VALIDATION_LIMIT} символов`;
+   validationMessage.innerText = `Пост больше ${TEXT_VALIDATION_LIMIT} символов`;
    validationMessage.classList.remove('validationMessage_hidden')
    btn.setAttribute('disabled', true);
    btn.style.opacity = "0.5";
