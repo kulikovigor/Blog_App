@@ -5,10 +5,9 @@ const TEXT_VALIDATION_LIMIT = 200;
 
 const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-input');
-const newPostBtnNode = document.querySelector('.js-new-post-btn');
+const myBtn = document.querySelector('.js-new-post-btn');
 const postsNode = document.querySelector('.js-posts'); 
-const validationMessage = document.getElementById('validationMessage'); 
-const myBtn = document.getElementById('btn').disabled = false;
+const validationMessage = document.getElementById('validationMessage');
 
 
 newPostBtnNode.addEventListener('click', function(){
@@ -31,27 +30,24 @@ postTextInputNode.addEventListener('input', function (){
 
 function validation() {
    const titleLen = postTitleInputNode.value.length;
-   const textLen = postTextInputNode.value.length;
+   const textLen = postTextInputNode.value.length;   
 
-   if (titleLen > TITLE_VALIDATION_LIMIT) {
-    validationMessage.innerText = `Заголовок больше ${TITLE_VALIDATION_LIMIT} символов`;
+   if (titleLen > TITLE_VALIDATION_LIMIT || textLen > TEXT_VALIDATION_LIMIT) {
+    validationMessage.innerText = 
+    titleLen > TITLE_VALIDATION_LIMIT
+    ? `Заголовок больше ${TITLE_VALIDATION_LIMIT} символов`
+    : `Пост больше ${TEXT_VALIDATION_LIMIT} символов`;
+
     validationMessage.classList.remove('validationMessage_hidden')
-    btn.setAttribute('disabled', true);
-    btn.style.opacity = "0.5";
-    return;
+    myBtn.setAttribute('disabled', true);
+    myBtn.style.opacity = "0.5";
    }
-
-   if (textLen > TEXT_VALIDATION_LIMIT) {
-   validationMessage.innerText = `Пост больше ${TEXT_VALIDATION_LIMIT} символов`;
-   validationMessage.classList.remove('validationMessage_hidden')
-   btn.setAttribute('disabled', true);
-   btn.style.opacity = "0.5";
-   return;
-}
-
-validationMessage.classList.add('validationMessage_hidden');
-}
-
+   else {
+    validationMessage.classList.add("validationMessage_hidden");
+    myBtn.removeAttribute("disabled");
+    myBtn.style.opacity = "1";
+   }   
+   }
 
 function getPostFromUser() {
     const title = postTitleInputNode.value;
@@ -95,8 +91,6 @@ function renderPosts() {
 
     postsNode.innerHTML = postsHTML;
 }
-
-
 
 
 // Свойство innerText позволяет считывать или задавать текстовое содержимое элемента
