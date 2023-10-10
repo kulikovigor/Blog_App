@@ -1,6 +1,5 @@
 .post-title-input {
   display: block;
-  word-break: break-all;
   margin-bottom: 20px;
   width: 492px;
   height: 60px;
@@ -9,7 +8,6 @@
 .post-text-input {
   display: block;
   resize: none;
-  word-break: break-all;
   margin-bottom: 20px;
   width: 493px;
   height: 250px;
@@ -22,7 +20,7 @@
 
 .post {
   width: 500px;
-  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .post__date {
