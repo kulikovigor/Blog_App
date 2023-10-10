@@ -9,15 +9,21 @@ const myBtn = document.querySelector('.js-new-post-btn');
 const postsNode = document.querySelector('.js-posts'); 
 const validationMessage = document.getElementById('validationMessage');
 
+myBtn.addEventListener('click', function(){
 
-newPostBtnNode.addEventListener('click', function(){
+    if (
+        postTitleInputNode.value.trim() === "" || 
+        postTextInputNode.value.trim() === ""
+        ) {
+        return;
+        }
+
     const postFromUser = getPostFromUser();
 
     addPost(postFromUser);
 
     renderPosts();
 });
-
 
 postTitleInputNode.addEventListener('input', function (){ 
     validation();
